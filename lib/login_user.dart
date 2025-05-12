@@ -2,9 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:prototyope/Register.dart';
 import 'package:prototyope/model/user.dart';
+import 'package:prototyope/profileScreen.dart';
 import 'Model/user.dart';
 import 'Service/AuthService.dart';
-import 'Welcome.dart';
+import 'newprofile.dart';
 
 class Loginscreen extends StatefulWidget{
   _LoginScreenState createState() => _LoginScreenState();
@@ -32,7 +33,7 @@ class _LoginScreenState extends State<Loginscreen>
       // );
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => UserProfileScreen()),
+        MaterialPageRoute(builder: (context) => ComplateProfileScreen()),
       );
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -50,8 +51,12 @@ class _LoginScreenState extends State<Loginscreen>
 
         ),
 
-        body: Padding(
-            padding: const EdgeInsets.all(16.0),
+        body: Center(
+          child:Padding(
+            padding: const EdgeInsets.all(120.0),
+              // child: Container(
+              //     padding: const EdgeInsets.all(60),
+
             child: Column(
               children: [
 
@@ -107,7 +112,9 @@ class _LoginScreenState extends State<Loginscreen>
 
 
               ],
-            )
+            // )
+              )
+        )
         )
     );
     throw UnimplementedError();
